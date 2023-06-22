@@ -130,6 +130,17 @@ class ProjectController extends Controller
 
         $form_data['slug'] = $slug;
 
+        if ($request->hasFile('img')) {
+
+            if ($project->img) {
+                Storage::delete($project->img);
+            }
+
+            $path = Storage::disk('public')->put('project_images', $request->img);
+
+            $form_data['img'] = $path;
+        }
+
         $project->update($form_data);
         return redirect()->route('admin.projects.index')->with('success', "Hai modificato correttamente il progetto:$project->project_title ");
 
