@@ -31,7 +31,7 @@
             
             <div class="mb-3">
                 <label for="" class="form-label">TYPE</label>
-                <select class="form-select form-select-lg" name="type_id" id="project-type">
+                <select class="form-select form-select-lg @error ('type_id') is-invalid @enderror" name="type_id" id="project-type">
                     <option selected>Select one</option>
 
                     @foreach ($types as $elem)
@@ -41,6 +41,14 @@
                     @endforeach
 
                 </select>
+                <div>
+                    @error('type_id')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
             </div>
 
             {{-- <div class="form-group my-2">

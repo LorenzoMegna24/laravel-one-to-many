@@ -46,6 +46,31 @@
                 <input class="form-control" type="file" name="img" aria-describedby="fileHelpId">
             </div>
 
+            <div class="mb-3">
+                <label for="" class="form-label">TYPE</label>
+                <select class="form-select form-select-lg @error ('type_id') is-invalid @enderror" 
+                name="type_id" 
+                id="project-type">
+                    <option selected>Select one</option>
+
+                    @foreach ($types as $elem)
+
+                    <option value="{{$elem->id}}" {{old('type_id', $project->type_id) == $elem->id ? 'selected' : '' }}>{{$elem->name_type}}</option>
+                        
+                    @endforeach
+
+                </select>
+                <div>
+                    @error('type_id')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+            </div>
+
+
             {{-- <div class="form-group my-2">
                 <label class="form-label" for="">SLUG</label>
                 <input class="form-control" type="text" name="slug">
