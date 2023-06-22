@@ -28,6 +28,20 @@
                 <label class="form-label" for="">CARICA IMMAGINE</label>
                 <input class="form-control" type="file" name="img" aria-describedby="fileHelpId">
             </div>
+            
+            <div class="mb-3">
+                <label for="" class="form-label">TYPE</label>
+                <select class="form-select form-select-lg" name="type_id" id="project-type">
+                    <option selected>Select one</option>
+
+                    @foreach ($types as $elem)
+
+                    <option value="{{$elem->id}}">{{$elem->name_type}}</option>
+                        
+                    @endforeach
+
+                </select>
+            </div>
 
             {{-- <div class="form-group my-2">
                 <label class="form-label" for="">SLUG</label>
