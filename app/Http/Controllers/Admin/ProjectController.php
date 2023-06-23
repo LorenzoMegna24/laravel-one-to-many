@@ -9,7 +9,7 @@ use App\Models\Admin\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Admin\Type;
-use Illuminate\Support\facades\Storage;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
