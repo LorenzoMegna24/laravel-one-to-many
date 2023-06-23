@@ -11,4 +11,9 @@
    <p>{{$project->description}}</p>
    <img src="{{asset('storage/' . $project->img)}}" alt="">
 
+
+   <div>
+      Type: {{$project->type->name_type}}
+   </div>
+
 @endsection
