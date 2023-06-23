@@ -127,7 +127,7 @@ class ProjectController extends Controller
                 'project_title.max' => 'Il campo titolo ha superato il limite di caratteri'
             ]
         );*/
-
+        // dd($request->all());
         //$form_data = $request->all();
         $form_data = $request->validated();
 
