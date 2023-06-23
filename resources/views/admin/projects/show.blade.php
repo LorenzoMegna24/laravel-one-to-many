@@ -10,9 +10,10 @@
    <p>{{$project->description}}</p>
    <img class="img-fluid" src="{{asset('storage/' . $project->img)}}" alt="">
 
-
-   {{-- <div>
+   @if ($project->type)
+   <div>
       Type: {{$project->type->name_type}}
-   </div> --}}
+   </div>
+   @endif
 
 @endsection
